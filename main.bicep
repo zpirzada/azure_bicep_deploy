@@ -4,7 +4,7 @@ param location string = resourceGroup().location
 
 var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
 
-resource storageAccount 'Microsoft.Storage/storageAccounts@2023-09-01' = {
+resource storageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
   name: sta
   location: location
   kind: 'StorageV2'
