@@ -50,7 +50,7 @@ jobs:
           # Provide the name of a resource group, only required for resource Group deployments.
           resourceGroupName: GitHubExampleRG
           # Specify the path or URL to the Azure Resource Manager template.
-          template: main.DevOpsGithub
+          template: main.bicep
           
           
       
