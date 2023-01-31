@@ -1,5 +1,5 @@
 @maxLength(11)
-param storageAccountPrefix string = 'bicep'
+param storageAccountPrefix string = 'zebi'
 param location string = resourceGroup().location
 
 var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
