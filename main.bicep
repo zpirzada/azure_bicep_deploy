@@ -1,9 +1,9 @@
 @maxLength(15)
-param storageAccountPrefix string = 'bicepstorage'
+param storageAccountPrefix string = 'bicepstore'
 param location string = 'West US 3'
 
-param appWebplan string = 'bicepappwlaunchplan'
-param appWeb string = 'bicepappwlaunch'
+param appWebplan string = 'bicepapplan'
+param appWeb string = 'bicepaplaunch'
 
 var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
 
