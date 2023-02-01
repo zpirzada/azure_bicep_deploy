@@ -1,6 +1,6 @@
 @maxLength(11)
 param storageAccountPrefix string = 'zebstorage'
-param location string = resourceGroup().location
+param location string = 'westus3'
 
 param appWebplan string = 'zebappwlaunchplan'
 param appWeb string = 'zebappwlaunch'
