@@ -13,12 +13,9 @@ var appw = '${appWeb}${uniqueString(subscription().id)}'
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
   name: sta
   location: location
+  kind: 'StorageV2'
   sku: {
     name: 'Standard_LRS'
-  }
-  kind: 'StorageV2'
-  properties: {
-    accessTier: 'Hot'
   }
 }
 
