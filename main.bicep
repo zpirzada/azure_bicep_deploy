@@ -1,9 +1,9 @@
 @maxLength(11)
-param storageAccountPrefix string = 'zebstorage'
+param storageAccountPrefix string = 'zbicepstorage'
 param location string = 'westus3'
 
-param appWebplan string = 'zebappwlaunchplan'
-param appWeb string = 'zebappwlaunch'
+param appWebplan string = 'zbicepappplan'
+param appWeb string = 'zbicepapp'
 
 var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
 
