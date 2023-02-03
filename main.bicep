@@ -4,6 +4,7 @@ param location string = 'West US 3'
 param resourceGroupName string = 'zeb-bicep-gh-rg'
 param appWebplan string = 'bicepapplan'
 param appWeb string = 'bicepaplaunch'
+param secondSubscriptionID string = subscription().id
 
 var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
 
@@ -36,9 +37,14 @@ resource appServiceApp 'Microsoft.Web/sites@2022-03-01' = {
   }
 }
 
+//resource newRG 'Microsoft.Resources/resourceGroups@2021-01-01' = {
+ // name: resourceGroupName
+ // location: location
+//}
+
   // module deployed to subscription
 module newRG 'resourceGroup.bicep' = {
-  name: 'newResourceGroup'
+  name: resourceGroupName
   scope: subscription(secondSubscriptionID)
   params: {
     resourceGroupName: resourceGroupName
