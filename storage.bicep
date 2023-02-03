@@ -1,6 +1,5 @@
-param storageAccountPrefix string = 'bicepst2'
-param storageLocation string = 'West US 3'
-param storageName string ='${storageAccountPrefix}${uniqueString(subscription().id)}'
+param storageLocation string 
+param storageName string 
 
 resource storageAcct 'Microsoft.Storage/storageAccounts@2019-06-01' = {
   name: storageName

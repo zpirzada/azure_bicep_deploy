@@ -1,10 +1,10 @@
 @maxLength(15)
-param storageAccountPrefix string = 'bicepstore'
+param storageAccountPrefix string = 'zbicepstore'
 param location string = 'West US 3'
 //param resourceGroupName string = 'zeb-bicep-gh-rg'
-param appWebplan string = 'bicepapplan'
-param appWeb string = 'bicepaplaunch'
-param storageName string = 'zbstorage2'
+param appWebplan string = 'zbicepapplan'
+param appWeb string = 'zbicepaplaunch'
+param storageName string = 'zbstorage3'
 
 var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
 
