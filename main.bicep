@@ -4,7 +4,8 @@ param location string = 'West US 3'
 param resourceGroupName string = 'zeb-bicep-gh-rg'
 param appWebplan string = 'bicepapplan'
 param appWeb string = 'bicepaplaunch'
-param secondSubscriptionID string = subscription().id
+
+targetScope='subscription'
 
 var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
 
