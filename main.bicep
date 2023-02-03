@@ -1,7 +1,7 @@
 @maxLength(15)
 param storageAccountPrefix string = 'bicepstore'
 param location string = 'West US 3'
-
+param resourceGroupName string = 'zeb-bicep-gh-rg'
 param appWebplan string = 'bicepapplan'
 param appWeb string = 'bicepaplaunch'
 
@@ -34,4 +34,9 @@ resource appServiceApp 'Microsoft.Web/sites@2022-03-01' = {
     serverFarmId: appServicePlan.id
     httpsOnly: true
   }
+}
+
+resource newRG 'Microsoft.Resources/resourceGroups@2021-01-01' = {
+  name: resourceGroupName
+  location: location
 }
