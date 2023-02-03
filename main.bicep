@@ -1,7 +1,8 @@
 @maxLength(15)
 param storageAccountPrefix string = 'bicepstore'
 param location string = 'East US'
-param resourceGroupName string = 'DefaultResourceGroup-EUS'
+//param resourceGroupName string = 'DefaultResourceGroup-EUS'
+//scope: resourceGroupName
 param appWebplan string = 'bicepapplan'
 param appWeb string = 'bicepaplaunch'
 param storageName string = 'zbstorage2'
@@ -14,7 +15,6 @@ var appw = '${appWeb}${uniqueString(subscription().id)}'
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
   name: sta
   location: location
-  scope: resourceGroupName
   kind: 'StorageV2'
   sku: {
     name: 'Standard_LRS'
