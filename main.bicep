@@ -37,17 +37,9 @@ resource appServiceApp 'Microsoft.Web/sites@2022-03-01' = {
   }
 }
 
-//resource newRG 'Microsoft.Resources/resourceGroups@2021-01-01' = {
- // name: resourceGroupName
- // location: location
-//}
-
-  // module deployed to subscription
-module newRG 'resourceGroup.bicep' = {
+resource newRG 'Microsoft.Resources/resourceGroups@2021-01-01' = {
   name: resourceGroupName
-  scope: subscription(secondSubscriptionID)
-  params: {
-    resourceGroupName: resourceGroupName
-    resourceGroupLocation: location
-  }
+  location: location
 }
+
+ 
