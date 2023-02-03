@@ -38,13 +38,9 @@ resource appServiceApp 'Microsoft.Web/sites@2022-03-01' = {
   }
 }
 
-resource newRG 'Microsoft.Resources/resourceGroups@2021-01-01' = {
-  name: resourceGroupName
-  location: location
-}
+
 module storageAcct 'storage.bicep' = {
   name: 'storageModule'
-  scope: newRG
   params: {
     storageLocation: location
     storageName: storageName
