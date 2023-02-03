@@ -4,7 +4,7 @@ param location string = 'West US 3'
 param resourceGroupName string = 'zeb-bicep-gh-rg'
 param appWebplan string = 'bicepapplan'
 param appWeb string = 'bicepaplaunch'
-
+param storageName string = 'zbstorage2'
 targetScope='subscription'
 
 var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
@@ -42,5 +42,12 @@ resource newRG 'Microsoft.Resources/resourceGroups@2021-01-01' = {
   name: resourceGroupName
   location: location
 }
-
+module storageAcct 'storage.bicep' = {
+  name: 'storageModule'
+  scope: newRG
+  params: {
+    storageLocation: location
+    storageName: storageName
+  }
+}
  
