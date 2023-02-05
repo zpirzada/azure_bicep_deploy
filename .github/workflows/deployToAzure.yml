@@ -38,7 +38,7 @@ jobs:
           # Set this value to true to enable Azure PowerShell Login in addition to Az CLI login
           enable-AzPSSession: true
 
-      - name: Azure PowerShell Action
+      - name: Create ResourceGroup
         uses: Azure/powershell@v1.2.0
         with:
           # Specify the Az PowerShell script here.
@@ -55,10 +55,11 @@ jobs:
           # Provide the name of a resource group, only required for resource Group deployments.
           resourceGroupName: ${{ env.resourceGroupName }}
           # Specify the path or URL to the Azure Resource Manager template.
-          template: main.bicep
+          template: main.jason
           
           #supply deployment parameters
           parameters: storageAccountPrefix=ghbaction
+          deploymentName: "gh${{github.run_id}}"
           
 
           
