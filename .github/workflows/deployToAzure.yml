@@ -13,6 +13,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  #define environment variables by Zeb
+env:
+  resourceGroupName: GitHubExampleRG
+
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -37,7 +42,7 @@ jobs:
         uses: Azure/powershell@v1.2.0
         with:
           # Specify the Az PowerShell script here.
-          inlineScript: New-AzResourceGroup -Name GithubExampleRG -location eastus2 -Force
+          inlineScript: New-AzResourceGroup -Name ${{ env.resourceGroupName }} -location eastus2 -Force
           # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
           azPSVersion: latest
 
@@ -48,10 +53,13 @@ jobs:
           scope: resourcegroup
 
           # Provide the name of a resource group, only required for resource Group deployments.
-          resourceGroupName: GitHubExampleRG
+          resourceGroupName: ${{ env.resourceGroupName }}
           # Specify the path or URL to the Azure Resource Manager template.
           template: main.bicep
-             
+          
+          #supply deployment parameters
+          parameters: storageAccountPrefix=ghbaction
+          
 
           
         
