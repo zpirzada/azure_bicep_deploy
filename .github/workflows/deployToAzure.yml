@@ -55,7 +55,7 @@ jobs:
           # Provide the name of a resource group, only required for resource Group deployments.
           resourceGroupName: ${{ env.resourceGroupName }}
           # Specify the path or URL to the Azure Resource Manager template.
-          template: main.jason
+          template: main.bicep
           
           #supply deployment parameters
           parameters: storageAccountPrefix=ghbaction
