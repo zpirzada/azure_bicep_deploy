@@ -1,11 +1,11 @@
 @maxLength(15)
 param storageAccountPrefix string = 'bicepstore'
 param location string = 'East US'
-//param resourceGroupName string = 'DefaultResourceGroup-EUS'
+//param resourceGroupName string = 'zeb-tf-rg-eastus'
 //scope: resourceGroupName
 param appWebplan string = 'bicepapplan'
 param appWeb string = 'bicepaplaunch'
-param storageName string = 'zbstorage2'
+//param storageName string = 'zbstorage2'
 
 var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
 
