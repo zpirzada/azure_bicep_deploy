@@ -51,6 +51,9 @@ jobs:
           resourceGroupName: GitHubExampleRG
           # Specify the path or URL to the Azure Resource Manager template.
           template: main.bicep
+
+          #supply deployment parameters
+          parameters: storageAccountPrefix=ghbx
           
           
       
