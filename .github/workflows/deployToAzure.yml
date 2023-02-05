@@ -48,7 +48,7 @@ jobs:
           scope: resourcegroup
 
           # Provide the name of a resource group, only required for resource Group deployments.
-          resourceGroupName: zeb-tf-rg-eastus
+          resourceGroupName: GitHubExampleRG
           # Specify the path or URL to the Azure Resource Manager template.
           template: main.bicep
           
