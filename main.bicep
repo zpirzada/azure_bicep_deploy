@@ -12,6 +12,7 @@ var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
 var applan = '${appWebplan}${uniqueString(subscription().id)}'
 var appw = '${appWeb}${uniqueString(subscription().id)}'
 
+
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
   name: sta
   location: location
@@ -38,10 +39,12 @@ resource appServiceApp 'Microsoft.Web/sites@2022-03-01' = {
   }
 }
 
-module storageAcct 'storage.bicep' = {
-  name: 'storageModule'
-  params: {
-    storageLocation: location
-    storageName: storageName
-  }
-}
+//temporarily commenting the following storage to avoid cost
+//modulare approach to create the storage as we did above
+//module storageAcct 'storage.bicep' = {
+ // name: 'storageModule'
+ // params: {
+ //   storageLocation: location
+ //   storageName: storageName
+ // }
+//}
