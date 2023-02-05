@@ -59,7 +59,7 @@ jobs:
           
           #supply deployment parameters
           parameters: storageAccountPrefix=ghbaction
-          deploymentName: "gh${{github.run_id}}"
+          deploymentName: "ghz${{github.run_id}}"
           
 
           
