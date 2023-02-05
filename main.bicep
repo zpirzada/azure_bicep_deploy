@@ -12,12 +12,12 @@ var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
 var applan = '${appWebplan}${uniqueString(subscription().id)}'
 var appw = '${appWeb}${uniqueString(subscription().id)}'
 
-targetScope = resourceGroupName
+//targetScope = resourceGroupName
 //scope: resourceGroupName
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
   name: sta
   location: location
-
+  scope: resourceGroupName
   kind: 'StorageV2'
   sku: {
     name: 'Standard_LRS'
