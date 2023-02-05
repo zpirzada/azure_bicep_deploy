@@ -1,7 +1,6 @@
 @maxLength(15)
 param storageAccountPrefix string = 'bicepstore'
 param location string = 'East US'
-param resourceGroupName string = 'GitHubx-eastus'
 
 param appWebplan string = 'bicepapplan'
 param appWeb string = 'bicepaplaunch'
@@ -12,12 +11,9 @@ var sta = '${storageAccountPrefix}${uniqueString(subscription().id)}'
 var applan = '${appWebplan}${uniqueString(subscription().id)}'
 var appw = '${appWeb}${uniqueString(subscription().id)}'
 
-//targetScope = resourceGroupName
-//scope: resourceGroupName
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
   name: sta
   location: location
-  scope: resourceGroupName
   kind: 'StorageV2'
   sku: {
     name: 'Standard_LRS'
