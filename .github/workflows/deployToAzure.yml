@@ -53,7 +53,7 @@ jobs:
           template: main.bicep
 
           #supply deployment parameters
-          parameters: storageAccountPrefix = ghbx
+          parameters: storageAccountPrefix=ghaction
           
           
       
